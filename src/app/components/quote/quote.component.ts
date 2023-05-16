@@ -12,6 +12,11 @@ export class QuoteComponent {
   constructor(public quoteService: QuoteService) {}
 
   ngOnInit(): void {
+    this.quote = 'Loading...';
+    this.getRandomQuote();
+  }
+
+  getRandomQuote() {
     this.quoteService.getQuote().subscribe((data) => {
       this.quote = data;
     });
