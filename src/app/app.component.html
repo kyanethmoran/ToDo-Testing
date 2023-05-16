@@ -1,4 +1,23 @@
-<mat-toolbar color="primary">ToDo App</mat-toolbar>
-<ul *ngFor="let i of items">
-  <app-item (remove)="remove(i)"></app-item>
-</ul>
+<mat-toolbar color="primary" class="toolbar">ToDo App</mat-toolbar>
+
+<section class="center-parent">
+  <div class="center-child" style="margin-top: 3vh">
+    <input
+      matInput
+      #newItem
+      placeholder="Add A Task Here"
+      (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+    />
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="addItem(newItem.value); newItem.value = ''"
+    >
+      Add
+    </button>
+  </div>
+
+  <ul *ngFor="let i of items" class="center-child">
+    <app-item (remove)="remove(i)" [item]="i"></app-item>
+  </ul>
+</section>

@@ -1,0 +1,9 @@
+.center-parent {
+  display: flex;
+  flex-direction: column;
+}
+.center-child {
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}

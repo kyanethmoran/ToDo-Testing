@@ -7,10 +7,20 @@ import { ItemComponent } from './components/item/item.component';
 import { QuoteComponent } from './components/quote/quote.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [AppComponent, ItemComponent, QuoteComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MatToolbarModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
