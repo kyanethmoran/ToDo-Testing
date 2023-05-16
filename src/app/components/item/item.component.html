@@ -1,4 +1,38 @@
 <section>
-  <mat-checkbox [id]="item.description" type="checkbox" />
+  <mat-checkbox [id]="item.description" type="checkbox" color="primary" />
   <label [for]="item.description">{{ item.description }}</label>
+
+  <div *ngIf="!editable">
+    <button mat-raised-button color="primary" (click)="editable = !editable">
+      Edit
+    </button>
+    <button mat-raised-button color="warn" (click)="remove.emit(item)">
+      Remove
+    </button>
+  </div>
+
+  <div *ngIf="editable">
+    <input
+      matInput
+      #newDescription
+      [value]="item.description"
+      (keyup.enter)="saveItem(newDescription.value); editable = !editable"
+    />
+    <button
+      *ngIf="editable"
+      mat-raised-button
+      color="primary"
+      (click)="saveItem(newDescription.value); editable = !editable"
+    >
+      Update
+    </button>
+    <button
+      *ngIf="editable"
+      mat-raised-button
+      color="warn"
+      (click)="editable = !editable"
+    >
+      Cancel
+    </button>
+  </div>
 </section>
