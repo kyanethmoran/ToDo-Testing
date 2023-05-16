@@ -1,1 +1,8 @@
-
+.toolbar {
+  border-bottom: 2px solid #ccc;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.toolbar-spacer {
+  flex: 1 1 auto;
+}

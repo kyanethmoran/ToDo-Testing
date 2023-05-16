@@ -1,6 +1,10 @@
-<mat-toolbar color="primary" class="toolbar">ToDo App</mat-toolbar>
+<mat-toolbar color="primary" class="toolbar"
+  >ToDo App
+  <span class="toolbar-spacer"></span>
+  <h1>Demo</h1>
+</mat-toolbar>
 
-<section class="center-parent">
+<section class="center-parent" style="margin-top: 5%">
   <div class="center-child" style="margin-top: 3vh">
     <input
       matInput
@@ -17,7 +21,7 @@
       Add
     </button>
   </div>
-  <div>
+  <div style="margin-bottom: 5%">
     <ul *ngFor="let i of items" class="center-child">
       <app-item (remove)="remove(i)" [item]="i"></app-item>
     </ul>

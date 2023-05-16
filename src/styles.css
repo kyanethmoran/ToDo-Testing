@@ -11,6 +11,7 @@ body {
 button {
   width: 20px;
 }
+
 .center-parent {
   display: flex;
   flex-direction: column;
