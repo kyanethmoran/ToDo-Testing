@@ -9,8 +9,6 @@ import { Item } from './interfaces/item';
 export class AppComponent {
   title = 'ToDo-Testing';
 
-  filter: 'all' | 'active' | 'done' = 'all';
-
   allItems = [
     { description: 'Get groceries', completed: false },
     { description: 'Call plumber', completed: false },
@@ -20,12 +18,7 @@ export class AppComponent {
 
   //get items
   get items() {
-    if (this.filter === 'all') {
-      return this.allItems;
-    }
-    return this.allItems.filter(
-      (item) => item.completed === (this.filter === 'done')
-    );
+    return this.allItems;
   }
 
   //add items to the list
