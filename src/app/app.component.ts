@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { Item } from './interfaces/item';
+import { Item } from './interfaces/item';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,13 @@ export class AppComponent {
   filter: 'all' | 'active' | 'done' = 'all';
 
   allItems = [
-    { descriptiion: 'Get groceries', completed: false },
-    { descriptiion: 'Call plumber', completed: false },
-    { descriptiion: 'Buy running shoes', completed: false },
-    { descriptiion: 'Buy flowers', completed: false },
+    { description: 'Get groceries', completed: false },
+    { description: 'Call plumber', completed: false },
+    { description: 'Buy running shoes', completed: false },
+    { description: 'Buy flowers', completed: false },
   ];
 
+  //get items
   get items() {
     if (this.filter === 'all') {
       return this.allItems;
@@ -28,15 +29,15 @@ export class AppComponent {
   }
 
   //add items to the list
-  addItem(descriptiion: string) {
+  addItem(description: string) {
     this.allItems.push({
-      descriptiion,
+      description,
       completed: false,
     });
   }
 
   //remove items from the list
-  remove(item: any) {
+  remove(item: Item) {
     this.allItems.splice(this.allItems.indexOf(item), 1);
   }
 }
