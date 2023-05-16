@@ -1,5 +1,5 @@
 <section>
-  <main class="task">
+  <main class="task spacing">
     <mat-checkbox [id]="item.description" type="checkbox" color="primary" />
     <label [for]="item.description">{{ item.description }}</label>
 
@@ -7,13 +7,11 @@
       <button mat-raised-button color="primary" (click)="editable = !editable">
         Edit
       </button>
-      <button mat-raised-button color="warn" (click)="remove.emit(item)">
-        Remove
-      </button>
+      <button mat-raised-button (click)="remove.emit(item)">Remove</button>
     </div>
   </main>
 
-  <div *ngIf="editable">
+  <div *ngIf="editable" class="task spacing">
     <input
       matInput
       #newDescription

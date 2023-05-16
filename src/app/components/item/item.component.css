@@ -1,0 +1,15 @@
+.task {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 300;
+  margin-left: -50px;
+}
+.spacing {
+  justify-content: space-around;
+}

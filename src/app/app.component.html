@@ -5,6 +5,7 @@
     <input
       matInput
       #newItem
+      class="input"
       placeholder="Add A Task Here"
       (keyup.enter)="addItem(newItem.value); newItem.value = ''"
     />

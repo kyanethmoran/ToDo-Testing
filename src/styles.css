@@ -8,3 +8,18 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+button {
+  width: 20px;
+}
+
+.input {
+  width: 300px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 300;
+}
