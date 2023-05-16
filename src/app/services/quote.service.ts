@@ -5,15 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class QuoteService {
-  public getApiValue: any;
-  public postApiValue: any;
+  public quote: any;
 
   constructor(private http: HttpClient) {}
 
   public getQuote() {
-    this.http.get('https://api.quotable.io/random').subscribe((response) => {
-      this.getApiValue = response;
-      return this.getApiValue;
-    }
+    return this.http.get('https://api.quotable.io/random');
   }
 }
