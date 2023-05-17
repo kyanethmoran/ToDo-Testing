@@ -26,4 +26,18 @@ describe('QuoteComponent', () => {
     fixture.detectChanges();
     expect(component).toBeTruthy();
   });
+
+  //Test that ngOnInit() calls getRandomQuote()
+  it('should call getRandomQuote() on ngOnInit()', () => {
+    spyOn(component, 'getRandomQuote');
+    component.ngOnInit();
+    expect(component.getRandomQuote).toHaveBeenCalled();
+  });
+
+  //Test that getRandomQuote() calls quoteService.getQuote()
+  it('should call quoteService.getQuote() on getRandomQuote()', () => {
+    spyOn(component.quoteService, 'getQuote').and.callThrough();
+    component.getRandomQuote();
+    expect(component.quoteService.getQuote).toHaveBeenCalled();
+  });
 });
