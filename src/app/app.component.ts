@@ -22,12 +22,6 @@ export class AppComponent {
   }
 
   //add items to the list
-  addItem(description: string) {
-    this.allItems.push({
-      description,
-      completed: false,
-    });
-  }
 
   //remove items from the list
   remove(item: Item) {

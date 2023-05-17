@@ -6,21 +6,9 @@
 
 <section class="center-parent" style="margin-top: 5%">
   <div class="center-child" style="margin-top: 3vh">
-    <input
-      matInput
-      #newItem
-      class="input"
-      placeholder="Add A Task Here"
-      (keyup.enter)="addItem(newItem.value); newItem.value = ''"
-    />
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="addItem(newItem.value); newItem.value = ''"
-    >
-      Add
-    </button>
+    <!-- Needs Code -->
   </div>
+
   <div style="margin-bottom: 5%">
     <ul *ngFor="let i of items" class="center-child">
       <app-item (remove)="remove(i)" [item]="i"></app-item>
