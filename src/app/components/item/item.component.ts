@@ -13,7 +13,7 @@ export class ItemComponent {
   @Output() remove = new EventEmitter<Item>();
 
   saveItem(description: string) {
-    this.editable = true;
+    // this.editable = false;
     this.item.description = description;
   }
 }
