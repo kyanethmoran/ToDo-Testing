@@ -4,10 +4,17 @@
     <label [for]="item.description">{{ item.description }}</label>
 
     <div *ngIf="!editable">
-      <button mat-raised-button color="primary" (click)="editable = !editable">
+      <button
+        id="edit"
+        mat-raised-button
+        color="primary"
+        (click)="editable = !editable"
+      >
         Edit
       </button>
-      <button mat-raised-button (click)="remove.emit(item)">Remove</button>
+      <button id="remove" mat-raised-button (click)="remove.emit(item)">
+        Remove
+      </button>
     </div>
   </main>
 
@@ -19,6 +26,7 @@
       (keyup.enter)="saveItem(newDescription.value); editable = !editable"
     />
     <button
+      id="update"
       *ngIf="editable"
       mat-raised-button
       color="primary"
@@ -27,6 +35,7 @@
       Update
     </button>
     <button
+      id="cancel"
       *ngIf="editable"
       mat-raised-button
       color="warn"
