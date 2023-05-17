@@ -4,7 +4,6 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { QuoteService } from './quote.service';
-import { inject } from '@angular/core';
 
 describe('QuoteService', () => {
   let service: QuoteService;
@@ -18,17 +17,15 @@ describe('QuoteService', () => {
     });
     injector = getTestBed();
     httpMock = injector.get(HttpTestingController);
+    service = TestBed.get(QuoteService);
   });
 
   it('should be created', () => {
-    const service: QuoteService = TestBed.get(QuoteService);
     expect(service).toBeTruthy();
   });
 
   // test for getQuote()
   it('should return a random quote', () => {
-    const service: QuoteService = TestBed.get(QuoteService);
-
     service.getQuote().subscribe((quote) => {
       expect(quote).toBeDefined();
     });
