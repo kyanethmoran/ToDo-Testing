@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class QuoteService {
-  public quote: any;
-
   constructor(private http: HttpClient) {}
 
   public getQuote() {
